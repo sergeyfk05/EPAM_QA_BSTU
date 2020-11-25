@@ -9,3 +9,13 @@
 *.suo
 /Aircompany.v12.suo
 /AircompanyTests.v12.suo
+*.cache
+*.json
+*.props
+*.dll
+*.testlog
+*.manifest
+*.CopyComplete
+*.targets
+WebDriver/bin/*
+WebDriver/obj/*
