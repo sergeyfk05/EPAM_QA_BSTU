@@ -26,9 +26,9 @@ namespace WebDriverTests
             return wait.Until(d => d.FindElement(by));
         }
 
-        public static IWebElement SafeFindElementBy(this IWebDriver driver, IEnumerable<By> byCollection)
+        public static IWebElement SafeFindElementBy(this IWebDriver driver, IEnumerable<By> byCollection, double timeout = 20)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
             return wait.Until(d => d.FindFirstExistingElementFromCollection(byCollection));
         }

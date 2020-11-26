@@ -17,7 +17,9 @@ namespace WebDriverTests
         private readonly IWebDriver driver;
         public DellTests()
         {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--start-maximized");
+            driver = new ChromeDriver(options);
         }
 
         public void Dispose()
@@ -42,6 +44,7 @@ namespace WebDriverTests
         public void AddingToCartTest(string productLink)
         {
             //product page
+            
             driver.Navigate().GoToUrl(productLink);
 
             IWebElement addToCartButton = driver.SafeFindElementBy(ProductPageElementFilters.AddToCartButton);
@@ -50,7 +53,7 @@ namespace WebDriverTests
             double ProductPageCost = Convert.ToDouble(driver.SafeFindElementBy(ProductPageElementFilters.PriceText).Text.Replace("$", ""),
                 Helpers.CostToDoubleConverterProvider);            
             
-            string ProductPageItemTitle = driver.SafeFindElementBy(ProductPageElementFilters.ProductTitle).Text.Trim();
+            string ProductPageItemTitle = driver.SafeFindElementBy(ProductPageElementFilters.ProductTitle).GetHiddenText(driver).Trim();
 
 
             addToCartButton.Click();
@@ -62,12 +65,12 @@ namespace WebDriverTests
             double CartPageCost = Convert.ToDouble(driver.SafeFindElementBy(CartPageElementFilters.SubtotalCost).GetHiddenText(driver).Replace("$", ""),
                 Helpers.CostToDoubleConverterProvider);
 
-            string CartPageProductTitle = driver.SafeFindElementBy(CartPageElementFilters.ProductTitle).Text.Trim();
+            string CartPageProductTitle = driver.SafeFindElementBy(CartPageElementFilters.ProductTitle).GetHiddenText(driver).Trim();
             int CartPageCountItems = Convert.ToInt32(driver.SafeFindElementBy(CartPageElementFilters.ProductCount).Text);
 
             Assert.Equal(1, CartPageCountItems);
             Assert.Equal(ProductPageCost, CartPageCost);
-            Assert.Equal(ProductPageItemTitle, CartPageProductTitle);
+            Assert.Equal(ProductPageItemTitle.ToUpper(), CartPageProductTitle.ToUpper());
         }
 
 
