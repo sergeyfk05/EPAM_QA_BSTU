@@ -19,3 +19,6 @@
 *.targets
 WebDriver/bin/*
 WebDriver/obj/*
+WebDriverTests/bin/*
+WebDriverTests/obj/*
+XUnitTestProject1/

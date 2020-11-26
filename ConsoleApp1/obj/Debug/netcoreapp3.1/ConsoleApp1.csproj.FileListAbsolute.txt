@@ -1,0 +1,16 @@
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.deps.json
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.json
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Debug\netcoreapp3.1\WebDriver.dll
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csprojAssemblyReference.cache
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CopyComplete
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
+D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
