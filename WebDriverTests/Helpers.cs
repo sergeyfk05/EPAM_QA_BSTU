@@ -19,11 +19,28 @@ namespace WebDriverTests
             }
         }
 
-        public static IWebElement SafeFindElementByXpath(this IWebDriver driver, string xpath)
+        public static IWebElement SafeFindElementBy(this IWebDriver driver, By by)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(120));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-            return wait.Until(d => d.FindElement(By.XPath(xpath)));
+            return wait.Until(d => d.FindElement(by));
+        }
+
+        public static IWebElement SafeFindElementBy(this IWebDriver driver, IEnumerable<By> byCollection)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            return wait.Until(d => d.FindFirstExistingElementFromCollection(byCollection));
+        }
+
+        private static IWebElement FindFirstExistingElementFromCollection(this IWebDriver driver, IEnumerable<By> byCollection)
+        {
+            foreach(var by in byCollection)
+            {
+                try { return driver.FindElement(by); } catch { }
+            }
+
+            throw new NoSuchElementException();
         }
 
         public static string GetHiddenText(this IWebElement element, IWebDriver driver)
