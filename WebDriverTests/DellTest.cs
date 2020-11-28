@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using WebDriverTests;
 using System.Collections.Generic;
-using WebDriverTests.ElementFilters;
+using WebDriverTests.ElementLocators;
 
 namespace WebDriverTests
 {
@@ -47,26 +47,26 @@ namespace WebDriverTests
             
             driver.Navigate().GoToUrl(productLink);
 
-            IWebElement addToCartButton = driver.SafeFindElementBy(ProductPageElementFilters.AddToCartButton);
+            IWebElement addToCartButton = driver.SafeFindElementBy(ProductPageElementLocators.AddToCartButton);
 
             driver.AcceptCookies();            
-            double ProductPageCost = Convert.ToDouble(driver.SafeFindElementBy(ProductPageElementFilters.PriceText).Text.Replace("$", ""),
+            double ProductPageCost = Convert.ToDouble(driver.SafeFindElementBy(ProductPageElementLocators.PriceText).Text.Replace("$", ""),
                 Helpers.CostToDoubleConverterProvider);            
             
-            string ProductPageItemTitle = driver.SafeFindElementBy(ProductPageElementFilters.ProductTitle).GetHiddenText(driver).Trim();
+            string ProductPageItemTitle = driver.SafeFindElementBy(ProductPageElementLocators.ProductTitle).GetHiddenText(driver).Trim();
 
 
             addToCartButton.Click();
 
-            driver.SafeFindElementBy(ProductPageElementFilters.ElementConfirmingAddingToCart);
+            driver.SafeFindElementBy(ProductPageElementLocators.ElementConfirmingAddingToCart);
 
             //cart page
             driver.Navigate().GoToUrl("https://www.dell.com/en-us/buy?cs=19");
-            double CartPageCost = Convert.ToDouble(driver.SafeFindElementBy(CartPageElementFilters.SubtotalCost).GetHiddenText(driver).Replace("$", ""),
+            double CartPageCost = Convert.ToDouble(driver.SafeFindElementBy(CartPageElementLocators.SubtotalCost).GetHiddenText(driver).Replace("$", ""),
                 Helpers.CostToDoubleConverterProvider);
 
-            string CartPageProductTitle = driver.SafeFindElementBy(CartPageElementFilters.ProductTitle).GetHiddenText(driver).Trim();
-            int CartPageCountItems = Convert.ToInt32(driver.SafeFindElementBy(CartPageElementFilters.ProductCount).Text);
+            string CartPageProductTitle = driver.SafeFindElementBy(CartPageElementLocators.ProductTitle).GetHiddenText(driver).Trim();
+            int CartPageCountItems = Convert.ToInt32(driver.SafeFindElementBy(CartPageElementLocators.ProductCount).Text);
 
             Assert.Equal(1, CartPageCountItems);
             Assert.Equal(ProductPageCost, CartPageCost);

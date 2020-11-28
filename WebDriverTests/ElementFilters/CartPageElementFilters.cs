@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebDriverTests.ElementFilters
+namespace WebDriverTests.ElementLocators
 {
-    public static class CartPageElementFilters
+    public static class CartPageElementLocators
     {
         public static readonly IEnumerable<By> SubtotalCost = new List<By>()
             {

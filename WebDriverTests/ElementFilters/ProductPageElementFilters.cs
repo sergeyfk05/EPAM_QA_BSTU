@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebDriverTests.ElementFilters
+namespace WebDriverTests.ElementLocators
 {
-    public static class ProductPageElementFilters
+    public static class ProductPageElementLocators
     {
         public static readonly IEnumerable<By> AddToCartButton = new List<By>()
             {
