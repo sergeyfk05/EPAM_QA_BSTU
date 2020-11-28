@@ -1,6 +1,0 @@
-D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Release\netcoreapp3.1\ConsoleApp1.exe
-D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Release\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
-D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Release\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
-D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
-D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\bin\Release\netcoreapp3.1\WebDriver.dll
-D:\University\labs\epam\EPAM_TA_BSTU\ConsoleApp1\obj\Release\netcoreapp3.1\ConsoleApp1.csproj.CopyComplete
