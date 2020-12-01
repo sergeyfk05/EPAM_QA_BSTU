@@ -1,7 +1,0 @@
-D:\University\labs\epam\aircompany\Net\Aircompany\bin\Debug\Aircompany.exe.config
-D:\University\labs\epam\aircompany\Net\Aircompany\bin\Debug\Aircompany.exe
-D:\University\labs\epam\aircompany\Net\Aircompany\bin\Debug\Aircompany.pdb
-D:\University\labs\epam\aircompany\Net\Aircompany\obj\Debug\Aircompany.csprojAssemblyReference.cache
-D:\University\labs\epam\aircompany\Net\Aircompany\obj\Debug\Aircompany.csproj.CoreCompileInputs.cache
-D:\University\labs\epam\aircompany\Net\Aircompany\obj\Debug\Aircompany.exe
-D:\University\labs\epam\aircompany\Net\Aircompany\obj\Debug\Aircompany.pdb

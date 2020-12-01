@@ -17,8 +17,8 @@
 *.manifest
 *.CopyComplete
 *.targets
-WebDriver/bin/*
-WebDriver/obj/*
-WebDriverTests/bin/*
-WebDriverTests/obj/*
+bin/*
+obj/*
+bin/*
+obj/*
 XUnitTestProject1/
