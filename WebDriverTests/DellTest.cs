@@ -72,6 +72,8 @@ namespace WebDriverTests
             Assert.Equal(1, CartPageCountItems);
             Assert.Equal(ProductPageCost, CartPageCost);
             Assert.Equal(ProductPageItemTitle.ToUpper(), CartPageProductTitle.ToUpper());
+
+            this.Dispose();
         }
 
 
