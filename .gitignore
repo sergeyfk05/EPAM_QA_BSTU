@@ -22,3 +22,7 @@ obj/*
 bin/*
 obj/*
 XUnitTestProject1/
+*.xml
+*.pdb
+*.nupgk
+*.config
