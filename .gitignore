@@ -17,12 +17,13 @@
 *.manifest
 *.CopyComplete
 *.targets
-bin/*
-obj/*
-bin/*
-obj/*
+bin/
+obj/
+bin/
+obj/
 XUnitTestProject1/
 *.xml
 *.pdb
 *.nupgk
 *.config
+*.v2
