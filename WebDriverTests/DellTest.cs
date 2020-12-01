@@ -19,6 +19,7 @@ namespace WebDriverTests
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--start-maximized");
+            options.AddArgument("no-sandbox");
             driver = new ChromeDriver(options);
         }
 
