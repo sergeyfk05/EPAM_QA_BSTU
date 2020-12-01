@@ -23,23 +23,29 @@ namespace DellPages.Pages
         {
             get
             {
-                List<double> subtotals = _driver.FindElements(By.XPath(CartPageLocators.ProductContainerXPath + CartPageLocators.ProductSubtotalXPath))
-                    .Select(x => Convert.ToDouble(x.Text.Replace("$", ""), Helpers.CostToDoubleConverterProvider)).ToList();
-                List<string> titles = _driver.FindElements(By.XPath(CartPageLocators.ProductContainerXPath + CartPageLocators.ProductTitleXPath))
-                    .Select(x => x.Text).ToList();
-                List<int> counts = _driver.FindElements(By.XPath(CartPageLocators.ProductContainerXPath + CartPageLocators.ProductCountXPath))
-                    .Select(x => Convert.ToInt32(x.Text)).ToList();
+                //List<double> subtotals = _driver.FindElements(By.XPath(CartPageLocators.ProductContainerXPath + CartPageLocators.ProductSubtotalXPath))
+                //    .Select(x => Convert.ToDouble(x.Text.Replace("$", ""), Helpers.CostToDoubleConverterProvider)).ToList();
+                //List<string> titles = _driver.FindElements(By.XPath(CartPageLocators.ProductContainerXPath + CartPageLocators.ProductTitleXPath))
+                //    .Select(x => x.Text).ToList();
+                //List<int> counts = _driver.FindElements(By.XPath(CartPageLocators.ProductContainerXPath + CartPageLocators.ProductCountXPath))
+                //    .Select(x => Convert.ToInt32(x.Text)).ToList();
 
                 List<Product> products = new List<Product>();
 
-                for(int i=0; i < subtotals.Count(); i++)
+                //for(int i=0; i < subtotals.Count(); i++)
+                //{
+                //    products.Add(new Product()
+                //    {
+                //        Count = counts[i],
+                //        Subtotal = subtotals[i],
+                //        Title = titles[i]
+                //    });
+                //}
+                IEnumerable<IWebElement> productContainers = _driver.FindElements(CartPageLocators.ProductContainer);
+
+                foreach(var el in productContainers)
                 {
-                    products.Add(new Product()
-                    {
-                        Count = counts[i],
-                        Subtotal = subtotals[i],
-                        Title = titles[i]
-                    });
+                    products.Add(new Product(el));
                 }
 
                 return products;
