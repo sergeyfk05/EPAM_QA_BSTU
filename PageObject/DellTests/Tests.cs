@@ -29,11 +29,11 @@ namespace DellTests
 
         [Theory]
         [InlineData("https://www.dell.com/en-us/shop/cty/pdp/spd/xps-15-9500-laptop/xn9500cto210s")]
+        [InlineData("https://www.dell.com/en-us/shop/dell-laptops/alienware-m17-r3-gaming-laptop/spd/alienware-m17-r3-laptop/wnm17r312sbf")]
         //[InlineData("https://www.dell.com/en-us/shop/dell-ultrasharp-32-8k-monitor-up3218k/apd/210-alez/monitors-monitor-accessories")]
         //[InlineData("https://www.dell.com/en-us/shop/dell-laptops/new-dell-g7-17-gaming-laptop/spd/g-series-17-7700-laptop/gn7700ehyyh")]
         //[InlineData("https://www.dell.com/en-us/shop/new-alienware-low-profile-rgb-mechanical-gaming-keyboard-aw510k/apd/580-aimo/pc-accessories")]
         //[InlineData("https://www.dell.com/en-us/shop/desktop-computers/new-inspiron-24-5000-black-all-in-one-with-bipod-stand/spd/inspiron-24-5400-aio/na5400ekphh")]
-        //[InlineData("https://www.dell.com/en-us/shop/dell-laptops/alienware-m17-r3-gaming-laptop/spd/alienware-m17-r3-laptop/wnm17r312sbf")]
         //[InlineData("https://www.dell.com/en-us/shop/desktop-computers/inspiron-desktop/spd/inspiron-3880-desktop/nd3880eejks")]
         //[InlineData("https://www.dell.com/en-us/shop/dell-urban-backpack-15/apd/460-bbyl/carrying-cases")]
         //[InlineData("https://www.dell.com/en-us/shop/kensington-ld4650p-usb-c-universal-dock-with-k-fob-smart-lock-docking-station-usb-c-gige-north-america/apd/aa659274/pc-accessories")]
@@ -64,24 +64,35 @@ namespace DellTests
         }
 
         [Theory]
-        [InlineData("https://www.dell.com/en-us/shop/cty/pdp/spd/xps-15-9500-laptop/xn9500cto210s")]
-        public void RemoveFromCart(string link)
+        [ClassData(typeof(RemoveFromCartTestData))]
+        public void RemoveFromCartTest(IEnumerable<string> links)
         {
-            ProductPage product = new ProductPageBuilder(_driver).SetProductLink(link).Build();
-            product.Open();
-            product.AcceptCookies();
+            foreach(var link in links)
+            {
+                ProductPage product = new ProductPageBuilder(_driver).SetProductLink(link).Build();
+                product.Open();
+                product.AcceptCookies();
 
-            product.AddToCart();
+                product.AddToCart();
+            }
+
 
             CartPage cart = new CartPage(_driver);
             cart.Open();
             List<Product> cartProducts = cart.Products.ToList();
 
-            Assert.Single(cartProducts);
+            Assert.Equal(links.Count(), cartProducts.Count);
 
-            cartProducts[0].Remove();
+            for(int i = 0; i < links.Count(); i++)
+            {
+                Assert.Equal(cartProducts.Sum(x => x.Subtotal), cart.Subtotal);
+
+                cartProducts[0].Remove();
+                cartProducts = cart.Products.ToList();
+                Assert.Equal(links.Count() - i - 1, cartProducts.Count);
+            }
+
             cartProducts = cart.Products.ToList();
-
             Assert.Empty(cartProducts);
         }
     }

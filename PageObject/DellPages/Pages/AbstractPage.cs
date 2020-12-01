@@ -15,7 +15,7 @@ namespace DellPages.Pages
             _driver = driver;
         }
 
-        private IWebElement _cookieUsageAcceptButton => Helpers.SafeFindElementBy(_driver, AbstractPageLocators.CookieUsageAcceptButtonLocators);
+        private IWebElement _cookieUsageAcceptButton => Helpers.SafeFindElementBy(_driver, AbstractPageLocators.CookieUsageAcceptButtonLocators, 3);
 
         public void AcceptCookies()
         {

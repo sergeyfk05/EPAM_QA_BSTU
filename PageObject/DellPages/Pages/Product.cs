@@ -25,6 +25,7 @@ namespace DellPages
         public void Remove()
         {
             _removeButton.Click();
+            Thread.Sleep(1500);
         }
 
         public override bool Equals(object obj)

@@ -16,6 +16,7 @@ namespace WebDriverTests.ElementLocators
             {
                 By.XPath("//select[@name='repeatSelect']/option[@selected='selected']")
             };
+        
         public static readonly IEnumerable<By> ProductTitle = new List<By>()
             {
                 By.XPath("//*[@data-testid='itemTitle']")
