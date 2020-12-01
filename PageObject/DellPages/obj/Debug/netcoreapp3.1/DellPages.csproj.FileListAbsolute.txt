@@ -1,0 +1,9 @@
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\obj\Debug\netcoreapp3.1\DellPages.csprojAssemblyReference.cache
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\obj\Debug\netcoreapp3.1\DellPages.AssemblyInfoInputs.cache
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\obj\Debug\netcoreapp3.1\DellPages.AssemblyInfo.cs
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\obj\Debug\netcoreapp3.1\DellPages.csproj.CoreCompileInputs.cache
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\bin\Debug\netcoreapp3.1\DellPages.deps.json
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\bin\Debug\netcoreapp3.1\DellPages.dll
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\bin\Debug\netcoreapp3.1\DellPages.pdb
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\obj\Debug\netcoreapp3.1\DellPages.dll
+D:\University\labs\epam\EPAM_TA_BSTU\PageObject\DellPages\obj\Debug\netcoreapp3.1\DellPages.pdb
