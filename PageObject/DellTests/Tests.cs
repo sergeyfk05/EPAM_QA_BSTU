@@ -83,13 +83,13 @@ namespace DellTests
 
             Assert.Equal(links.Count(), cartProducts.Count);
 
-            for(int i = 0; i < links.Count(); i++)
+            for(int i = links.Count(); i > 0; i--)
             {
                 Assert.Equal(cartProducts.Sum(x => x.Subtotal), cart.Subtotal);
 
                 cartProducts[0].Remove();
                 cartProducts = cart.Products.ToList();
-                Assert.Equal(links.Count() - i - 1, cartProducts.Count);
+                Assert.Equal(i, cartProducts.Count);
             }
 
             cartProducts = cart.Products.ToList();
